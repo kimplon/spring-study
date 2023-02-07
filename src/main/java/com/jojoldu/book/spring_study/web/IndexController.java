@@ -1,5 +1,6 @@
 package com.jojoldu.book.spring_study.web;
 
+import com.jojoldu.book.spring_study.config.auth.LoginUser;
 import com.jojoldu.book.spring_study.config.auth.dto.SessionUser;
 import com.jojoldu.book.spring_study.service.PostsService;
 import com.jojoldu.book.spring_study.web.dto.PostsResponseDto;
@@ -17,9 +18,9 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
