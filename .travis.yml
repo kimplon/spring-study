@@ -5,6 +5,9 @@ branches:
   only:
     - main
 
+before_install:
+  - chmod +x gradlew
+
 # Travis CI Server's Home
 cache:
   - directories:
