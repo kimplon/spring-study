@@ -41,7 +41,7 @@ deploy:
     bucket: freelec-springboot
     key: spring-study.zip
     bundle_type: zip
-    application: freelec-springboot2-webservice
+    application: spring-web-service
     deployment_group: freelec-springboot2-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
