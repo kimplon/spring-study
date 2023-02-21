@@ -35,6 +35,17 @@ deploy:
     on:
       all_branches: true
 
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: freelec-springboot
+    key: spring-study.zip
+    bundle_type: zip
+    application: freelec-springboot2-webservice
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      all_branches: true
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
